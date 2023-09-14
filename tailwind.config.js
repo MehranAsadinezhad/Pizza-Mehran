@@ -5,17 +5,18 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#e84118",
-        secondary: "#c23616",
+        primary: "#E70E2E",
+        secondary: "#C60C28",
+        lightRed: "#EE2744",
         dark: "#353b48",
         medium: "#dcdde1",
         light: "#f5f6fa",
       },
       fontFamily: {
-        vazir: ["vazir"],
-        cody: ["cody"],
-        shabnam: ["shabnam"],
-        shabnamBold: ["shabnamBold"],
+        vazir: "Vazir",
+        cody: "Codystar",
+        shabnam: "Shabnam",
+        shabnamBold: "shabnamBold",
       },
     },
   },

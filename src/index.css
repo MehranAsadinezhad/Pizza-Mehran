@@ -3,21 +3,25 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: vazir;
-  src: url("/src/assets/fonts/Vazir.ttf") format("truetype");
+  font-family: Vazir;
+  src: url("assets/Vazir.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: cody;
-  src: url("/src/assets/fonts/Codystar-Regular.ttf") format("truetype");
+  font-family: Codystar;
+  src: url("assets/Codystar-Regular.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: shabnam;
-  src: url("/src/assets/fonts/Shabnam.ttf") format("truetype");
+  font-family: Shabnam;
+  src: url("assets/Shabnam.ttf") format("truetype");
 }
 
 @font-face {
   font-family: shabnamBold;
-  src: url("/src/assets/fonts/Shabnam-Bold.ttf") format("truetype");
+  src: url("assets/Shabnam-Bold.ttf") format("truetype");
+}
+
+body{
+  background-color: #f5f6fa;
 }
