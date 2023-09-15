@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../../ui/Header";
 import { FaHeartPulse, FaHandHoldingHeart, FaRegHeart } from "react-icons/fa6";
-import Button from "../../ui/Button";
+import ButtonLg from "../../ui/ButtonLg";
 
 export default function Home() {
   return (
@@ -20,7 +20,7 @@ export default function Home() {
         className="mb-10 rounded-full p-2 font-vazir outline-none ring-1 ring-gray-200 transition-all duration-200 focus:ring-2 focus:ring-primary "
         placeholder="نام کاربری"
       ></input>
-      <Button>سفارش</Button>
+      <ButtonLg>سفارش</ButtonLg>
     </div>
   );
 }

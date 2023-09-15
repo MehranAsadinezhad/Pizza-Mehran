@@ -13,7 +13,7 @@ export default function AppLayout() {
         </main>
       </div>
 
-      <Cart />
+      {/* <Cart /> */}
     </div>
   );
 }
