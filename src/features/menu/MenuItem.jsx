@@ -10,10 +10,10 @@ export default function MenuItem({ pizza }) {
       <img src={imageUrl} alt={name} className="h-28 w-28"></img>
       <div className="flex flex-col">
         <p className="text-lg font-semibold tracking-wide">{name}</p>
-        <p className="font-mono italic text-dark">{ingredients.join(", ")}</p>
+        <p className="font-mono text-dark">{ingredients.join(", ")}</p>
         <div className="mt-auto">
           {!soldOut ? (
-            <p className="font-mono ">{formatCurrency(unitPrice)}</p>
+            <p className="font-mono">{formatCurrency(unitPrice)}</p>
           ) : (
             <p className="font-semibold text-dark">SOLD OUT</p>
           )}
