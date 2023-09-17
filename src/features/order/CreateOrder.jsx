@@ -48,7 +48,7 @@ function CreateOrder() {
       <Form method="POST" className="flex flex-col">
         <div className="mb-10 flex items-center gap-x-2">
           <label className="font-vazir text-lg font-semibold sm:basis-40">
-            نام
+            نام و نام خانوادگی
           </label>
           <input
             className=" grow rounded-full p-2 font-vazir outline-none ring-1 ring-gray-200 transition-all duration-200 focus:ring-2 focus:ring-primary "
@@ -97,8 +97,6 @@ function CreateOrder() {
             type="checkbox"
             name="priority"
             id="priority"
-            // value={withPriority}
-            // onChange={(e) => setWithPriority(e.target.checked)}
           />
           <label htmlFor="priority" className="font-vazir">
             می خواهی سفارشت در اولویت قرار بگیرد؟
@@ -117,7 +115,7 @@ function CreateOrder() {
 }
 
 export async function action({ request }) {
-  const formData = await request.formData;
+  const formData = await request.formData();
   const data = Object.fromEntries(formData);
 
   const order = {

@@ -59,7 +59,7 @@ function Order() {
         ))}
       </ul>
 
-      <div className="space-y-2 bg-stone-200 px-6 py-5">
+      <div className="space-y-2 text-center bg-stone-200 px-6 py-5">
         <p className="text-sm font-semibold font-vazir text-dark">
           مجموع هزینه پیتزا : {formatCurrency(orderPrice)}
         </p>
