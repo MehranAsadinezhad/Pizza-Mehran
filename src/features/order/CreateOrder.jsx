@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Form, redirect, useActionData, useNavigation } from "react-router-dom";
 import { createOrder } from "../../services/apiRestaurant";
 import ButtonSm from "../../ui/ButtonSm";
+import { useSelector } from "react-redux";
 
 // https://uibakery.io/regex-library/phone-number
 const isValidPhone = (str) =>
@@ -41,7 +42,7 @@ function CreateOrder() {
 
   // const [withPriority, setWithPriority] = useState(false);
   const cart = fakeCart;
-
+  const username = useSelector((state) => state.user.username);
   return (
     <div className="mx-72 flex flex-col px-4 py-6">
       {/* <Form method="POST" action="/order/new"> */}
@@ -54,6 +55,7 @@ function CreateOrder() {
             className=" grow rounded-full p-2 font-vazir outline-none ring-1 ring-gray-200 transition-all duration-200 focus:ring-2 focus:ring-primary "
             type="text"
             name="customer"
+            defaultValue={username}
             required
           />
         </div>
@@ -64,7 +66,7 @@ function CreateOrder() {
           </label>
           <div className="grow">
             <input
-              className="w-full rounded-full p-2 font-vazir outline-none ring-1 ring-gray-200 transition-all duration-200 focus:ring-2 focus:ring-primary "
+              className="w-full rounded-full p-2 px-4 font-vazir outline-none ring-1 ring-gray-200 transition-all duration-200 focus:ring-2 focus:ring-primary "
               type="tel"
               name="phone"
               required
@@ -83,7 +85,7 @@ function CreateOrder() {
           </label>
           <div className="grow">
             <input
-              className=" w-full rounded-full p-2 font-vazir outline-none ring-1 ring-gray-200 transition-all duration-200 focus:ring-2 focus:ring-primary "
+              className=" w-full rounded-full p-2 px-4 font-vazir outline-none ring-1 ring-gray-200 transition-all duration-200 focus:ring-2 focus:ring-primary "
               type="text"
               name="address"
               required
