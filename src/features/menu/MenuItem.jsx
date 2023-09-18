@@ -1,9 +1,23 @@
 import React from "react";
 import { formatCurrency } from "../../utils/helpers";
 import ButtonSm from "../../ui/ButtonSm";
+import { useDispatch } from "react-redux";
+import { addItem } from "../cart/cartSlice";
 
 export default function MenuItem({ pizza }) {
   const { id, name, unitPrice, ingredients, soldOut, imageUrl } = pizza;
+  const dispatch = useDispatch();
+
+  function handleAddToCart() {
+    const selectedItem = {
+      pizzaId: id,
+      name,
+      quantity: 1,
+      unitPrice,
+      totalPrice: unitPrice * 1,
+    };
+    dispatch(addItem(selectedItem));
+  }
 
   return (
     <li className="flex gap-x-5 border-b-2 py-2">
@@ -20,7 +34,9 @@ export default function MenuItem({ pizza }) {
         </div>
       </div>
       <div className="mr-auto mt-auto">
-        <ButtonSm>سفارش</ButtonSm>
+        {!soldOut && (
+          <ButtonSm onClick={handleAddToCart}>اضافه به سبد</ButtonSm>
+        )}
       </div>
     </li>
   );
