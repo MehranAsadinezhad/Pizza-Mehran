@@ -31,7 +31,7 @@ body {
   .loader {
     width: 45px;
     aspect-ratio: 0.75;
-    --c: no-repeat linear-gradient(#000 0 0);
+    --c: no-repeat linear-gradient(theme(colors.dark) 0 0);
     background:
       var(--c) 0% 100%,
       var(--c) 50% 100%,
