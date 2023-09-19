@@ -9,7 +9,7 @@ export default function Cart() {
   const totalCartPrice = useSelector(getTotalCartPrice);
   if (!totalCartQuantity) return null;
   return (
-    <div className="flex h-12 items-center justify-between bg-dark px-5 font-vazir text-lg text-light">
+    <div className="flex h-14 items-center justify-between bg-dark px-5 font-vazir text-lg text-light">
       <Link to="/cart">ثبت سفارش</Link>
       <div className="flex items-center gap-x-5">
         <h1>{formatCurrency(totalCartPrice)}</h1>
