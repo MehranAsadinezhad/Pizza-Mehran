@@ -4,6 +4,7 @@ import ButtonSm from "../../ui/ButtonSm";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem, getCurrentQuantity } from "../cart/cartSlice";
 import DeleteButton from "../../ui/DeleteButton";
+import UpdateItemQuantity from "../cart/UpdateItemQuantity";
 
 export default function MenuItem({ pizza }) {
   const { id, name, unitPrice, ingredients, soldOut, imageUrl } = pizza;
@@ -37,7 +38,12 @@ export default function MenuItem({ pizza }) {
         </div>
       </div>
       <div className="mr-auto mt-auto">
-        {isInCart && <DeleteButton pizzaId={id}>حذف</DeleteButton>}
+        {isInCart && (
+          <div className="flex flex-row-reverse items-center gap-3">
+            <DeleteButton pizzaId={id}>حذف</DeleteButton>
+            <UpdateItemQuantity pizzaId={id} currentQuantity={currentQuantity}/>
+          </div>
+        )}
         {!soldOut && !isInCart && (
           <ButtonSm onClick={handleAddToCart}>اضافه به سبد</ButtonSm>
         )}
