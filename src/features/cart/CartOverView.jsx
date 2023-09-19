@@ -11,7 +11,7 @@ export default function Cart() {
     <div className="flex h-14 items-center justify-between bg-dark px-5 font-vazir text-xl text-light">
       <Link to="/cart">مشاهده سبد خرید</Link>
       <div className="flex items-center gap-x-5">
-        <h1>{totalCartPrice}$</h1>
+        <h1>{totalCartPrice} $</h1>
         <h1>{totalCartQuantity} پیتزا</h1>
       </div>
     </div>

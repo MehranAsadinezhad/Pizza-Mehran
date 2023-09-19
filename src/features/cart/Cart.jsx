@@ -21,13 +21,13 @@ export default function Cart() {
 
       <ul className="mt-3 divide-y divide-stone-200 border-b">
         {cart.map((item) => (
-          <CartItem item={item} key={item.key} />
+          <CartItem item={item} key={item.id} />
         ))}
       </ul>
 
       <div className="mt-6 flex items-center gap-x-3">
         <ButtonLg to="/order/new">سفارش</ButtonLg>
-        <SecondButton onClick={() => dispatch(clearCart)}>
+        <SecondButton onClick={() => dispatch(clearCart())}>
           حذف سبد خرید
         </SecondButton>
       </div>
