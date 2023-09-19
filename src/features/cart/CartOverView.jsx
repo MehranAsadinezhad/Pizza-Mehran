@@ -9,8 +9,8 @@ export default function Cart() {
   const totalCartPrice = useSelector(getTotalCartPrice);
   if (!totalCartQuantity) return null;
   return (
-    <div className="flex items-center justify-between bg-dark p-4 font-vazir text-light">
-      <Link to="/cart" className="text-lightRed">
+    <div className="flex items-center rounded-b-xl justify-between bg-dark p-4 font-vazir text-light">
+      <Link to="/cart" className="text-primary">
         ثبت سفارش
       </Link>
       <div className="flex items-center gap-x-5">
