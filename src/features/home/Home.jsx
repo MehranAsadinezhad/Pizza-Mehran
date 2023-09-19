@@ -38,11 +38,8 @@ export default function Home() {
             onChange={(e) => setUsername(e.target.value)}
           ></input>
         )}
-        {!isUsername ? (
-          <ButtonLg>سفارش</ButtonLg>
-        ) : (
-          <ButtonLg to="/menu">برگشت به منو</ButtonLg>
-        )}
+        {username && <ButtonLg>سفارش</ButtonLg>}
+        {isUsername && <ButtonLg to="/menu">برگشت به منو</ButtonLg>}
       </form>
     </div>
   );
