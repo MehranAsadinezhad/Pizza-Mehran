@@ -11,21 +11,23 @@ export default function Cart() {
   const username = useSelector((state) => state.user.username);
   const dispatch = useDispatch();
   return (
-    <div className="mx-72 my-5 px-4 py-3">
-      <div className="my-6 flex items-center justify-between">
-        <h2 className="font-vazir text-xl font-semibold">
+    <div className="mx-4">
+      <div className="my-5 flex items-center justify-between">
+        <h2 className="font-vazir text-lg font-semibold">
           سبد خرید {username}
         </h2>
-        <ButtonSm to="/menu">&larr; برگشت به منو</ButtonSm>
+        <div>
+          <ButtonLg to="/menu">&larr; منو</ButtonLg>
+        </div>
       </div>
 
-      <ul className="mt-3 divide-y divide-stone-200 border-b">
+      <ul className="divide-y divide-stone-200 border-b">
         {cart.map((item) => (
           <CartItem item={item} key={item.pizzaId} />
         ))}
       </ul>
 
-      <div className="mt-6 flex items-center gap-x-3">
+      <div className="my-5 flex items-center gap-x-3">
         <ButtonLg to="/order/new">سفارش</ButtonLg>
         <SecondButton onClick={() => dispatch(clearCart())}>
           حذف سبد خرید

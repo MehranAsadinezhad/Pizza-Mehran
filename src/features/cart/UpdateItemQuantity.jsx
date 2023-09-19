@@ -6,14 +6,14 @@ export default function UpdateItemQuantity({ pizzaId, currentQuantity }) {
   return (
     <div className="flex flex-row-reverse items-center gap-x-2">
       <button
-        className="h-8 w-8 rounded-full bg-secondary text-center text-sm font-bold text-light transition-all duration-200 hover:bg-lightRed"
+        className="h-7 w-7 rounded-full bg-secondary text-center text-sm font-bold text-light transition-all duration-200 hover:bg-lightRed"
         onClick={() => dispatch(decreaseItem(pizzaId))}
       >
         -
       </button>
-      <span className="font-semibold">{currentQuantity}</span>
+      <span className="font-medium">{currentQuantity}</span>
       <button
-        className="h-8 w-8 rounded-full bg-secondary text-center text-sm font-bold text-light transition-all duration-200 hover:bg-lightRed"
+        className="h-7 w-7 rounded-full bg-secondary text-center text-sm font-bold text-light transition-all duration-200 hover:bg-lightRed"
         onClick={() => dispatch(increaseItem(pizzaId))}
       >
         +

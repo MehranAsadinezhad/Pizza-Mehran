@@ -14,7 +14,7 @@ function CartItem({ item }) {
         {quantity}&times;{" "}
         <span className="font-vazir font-semibold">پیتزای</span> {name}
       </p>
-      <div className="flex items-center justify-between sm:gap-6">
+      <div className="flex items-center gap-x-4 justify-between">
         <p className="text-sm font-bold">{formatCurrency(totalPrice)}</p>
         <UpdateItemQuantity pizzaId={pizzaId} currentQuantity={currentQuantity}/>
         <DeleteButton pizzaId={pizzaId}>حذف</DeleteButton>

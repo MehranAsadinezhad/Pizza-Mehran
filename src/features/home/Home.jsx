@@ -19,11 +19,11 @@ export default function Home() {
   }
 
   return (
-    <div className="my-20 flex flex-col items-center justify-center">
-      <h1 className="font-vazir text-4xl tracking-wider text-primary">
+    <div className="my-14 flex flex-col items-center justify-center">
+      <h1 className="font-vazir text-2xl tracking-wider text-primary">
         یکبار امتحان از منوی ما
       </h1>
-      <div className="my-10 flex gap-x-2 font-vazir text-4xl tracking-wider text-dark">
+      <div className="my-5 flex gap-x-1 font-vazir text-2xl tracking-wider text-dark">
         <h1>و یک عمر تکرار امتحان</h1>
         <span className="text-dark">
           <FaRegHeart />
@@ -33,8 +33,8 @@ export default function Home() {
         {!isUsername && (
           <input
             type="text"
-            className="mb-10 rounded-full p-2 font-vazir outline-none ring-1 ring-gray-200 transition-all duration-200 focus:ring-2 focus:ring-primary "
-            placeholder="نام کاربری"
+            className="mb-5 rounded-full py-1 px-2  font-vazir outline-none ring-1 ring-gray-200 transition-all duration-200 focus:ring-2 focus:ring-primary "
+            placeholder="نام و نام خانوادگی"
             onChange={(e) => setUsername(e.target.value)}
           ></input>
         )}

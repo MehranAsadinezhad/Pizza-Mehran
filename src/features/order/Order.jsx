@@ -1,13 +1,13 @@
 // Test ID: IIDSAT
 
-import OrderItem from './OrderItem';
-import { useLoaderData } from 'react-router-dom';
-import { getOrder } from '../../services/apiRestaurant';
+import OrderItem from "./OrderItem";
+import { useLoaderData } from "react-router-dom";
+import { getOrder } from "../../services/apiRestaurant";
 import {
   calcMinutesLeft,
   formatCurrency,
   formatDate,
-} from '../../utils/helpers';
+} from "../../utils/helpers";
 
 function Order() {
   const order = useLoaderData();
@@ -26,29 +26,23 @@ function Order() {
   const deliveryIn = calcMinutesLeft(estimatedDelivery);
 
   return (
-    <div className="space-y-8 px-4 py-6 flex flex-col mx-72 my-5">
-      <div className="flex flex-wrap items-center justify-between gap-2">
-        <h2 className="text-xl font-semibold font-vazir">سفارش #{id}</h2>
-
-        <div className="space-x-2">
-          {priority && (
-            <span className="rounded-full bg-red-500 px-3 py-1 text-sm font-semibold uppercase tracking-wide text-light">
-              Priority
-            </span>
-          )}
-          <span className="rounded-full bg-green-500 px-3 py-1 text-sm font-semibold uppercase tracking-wide text-light">
-            {status} order
+    <div className="mx-4 my-5 flex flex-col">
+      <div className="flex flex-wrap items-center justify-between">
+        <h2 className="font-vazir text-lg font-semibold">سفارش #{id}</h2>
+        {priority && (
+          <span className="rounded-full bg-green-500 px-3 py-1 font-vazir text-sm font-semibold uppercase tracking-wide text-light">
+            در اولویت
           </span>
-        </div>
+        )}
       </div>
 
-      <div className="flex flex-wrap items-center justify-between gap-2 bg-stone-200 px-6 py-5">
+      <div className="flex flex-wrap items-center justify-between my-5 gap-2 bg-stone-200 px-6 py-5">
         <p className="font-vazir text-dark">
           {deliveryIn >= 0
             ? `فقط ${calcMinutesLeft(estimatedDelivery)} دقیقه باقی مانده 😃`
-            : 'سفارش شما باید رسیده باشد !'}
+            : "سفارش شما باید رسیده باشد !"}
         </p>
-        <p className="text-sm font-vazir text-dark">
+        <p className="font-vazir text-sm text-dark">
           (تخمین زمان تحویل : {formatDate(estimatedDelivery)})
         </p>
       </div>
@@ -59,16 +53,16 @@ function Order() {
         ))}
       </ul>
 
-      <div className="space-y-2 text-center bg-stone-200 px-6 py-5">
-        <p className="text-sm font-semibold font-vazir text-dark">
+      <div className="space-y-2 bg-stone-200 my-5 px-6 py-5 text-center">
+        <p className="font-vazir text-sm font-semibold text-dark">
           مجموع هزینه پیتزا : {formatCurrency(orderPrice)}
         </p>
         {priority && (
-          <p className="text-sm font-semibold font-vazir text-dark">
+          <p className="font-vazir text-sm font-semibold text-dark">
             هزینه ی اولویت : {formatCurrency(priorityPrice)}
           </p>
         )}
-        <p className="font-bold font-vazir">
+        <p className="font-vazir font-bold">
           هزینه ی کل : {formatCurrency(orderPrice + priorityPrice)}
         </p>
       </div>

@@ -18,6 +18,18 @@ export default {
         shabnam: "Shabnam",
         shabnamBold: "shabnamBold",
       },
+      screens: {
+        sm: "370px",
+        // => @media (min-width: 576px) { ... }
+
+        md: "498px",
+        // => @media (min-width: 960px) { ... }
+
+        lg: "742px",
+        // => @media (min-width: 1440px) { ... }
+
+        xl: "1022px",
+      },
     },
   },
   plugins: [],

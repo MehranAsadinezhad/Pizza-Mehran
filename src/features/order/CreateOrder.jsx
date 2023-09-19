@@ -1,6 +1,7 @@
 import { Form, redirect, useActionData, useNavigation } from "react-router-dom";
 import { createOrder } from "../../services/apiRestaurant";
 import ButtonSm from "../../ui/ButtonSm";
+import ButtonLg from "../../ui/ButtonLg";
 import store from "../../store";
 import { useSelector } from "react-redux";
 import { clearCart, getCard, getTotalCartPrice } from "../cart/cartSlice";
@@ -26,19 +27,19 @@ function CreateOrder() {
   const username = useSelector((state) => state.user.username);
   const totalCartPrice = useSelector(getTotalCartPrice);
   const priorityPrice = priority ? totalCartPrice * 0.2 : 0;
-  const totalPrice =  totalCartPrice + priorityPrice;
+  const totalPrice = totalCartPrice + priorityPrice;
   if (!cart.length) return <EmptyCart />;
 
   return (
-    <div className="mx-72 flex flex-col px-4 py-6">
+    <div className="mx-4 my-5 flex flex-col">
       {/* <Form method="POST" action="/order/new"> */}
       <Form method="POST" className="flex flex-col">
-        <div className="mb-10 flex items-center gap-x-2">
-          <label className="font-vazir text-lg font-semibold sm:basis-40">
+        <div className="mb-5 grow flex items-center gap-x-2">
+          <label className="font-vazir grow font-semibold sm:basis-40">
             نام و نام خانوادگی
           </label>
           <input
-            className=" grow rounded-full p-2 font-vazir outline-none ring-1 ring-gray-200 transition-all duration-200 focus:ring-2 focus:ring-primary "
+            className="w-full rounded-full p-2 font-vazir outline-none ring-1 ring-gray-200 transition-all duration-200 focus:ring-2 focus:ring-primary "
             type="text"
             name="customer"
             defaultValue={username}
@@ -46,8 +47,8 @@ function CreateOrder() {
           />
         </div>
 
-        <div className="mb-10 flex items-center gap-x-2">
-          <label className="font-vazir text-lg font-semibold sm:basis-40">
+        <div className="mb-5 flex items-center gap-x-2">
+          <label className="font-vazir font-semibold sm:basis-40">
             شماره تماس
           </label>
           <div className="grow">
@@ -65,13 +66,13 @@ function CreateOrder() {
           </div>
         </div>
 
-        <div className="mb-10 flex items-center gap-x-2">
-          <label className="font-vazir text-lg font-semibold sm:basis-40">
+        <div className="mb-5 flex items-center gap-x-2">
+          <label className="font-vazir font-semibold">
             آدرس
           </label>
           <div className="grow">
-            <input
-              className=" w-full rounded-full p-2 px-4 font-vazir outline-none ring-1 ring-gray-200 transition-all duration-200 focus:ring-2 focus:ring-primary "
+            <textarea
+              className=" w-full rounded-lg px-2 font-vazir outline-none ring-1 ring-gray-200 transition-all duration-200 focus:ring-2 focus:ring-primary "
               type="text"
               name="address"
               required
@@ -79,14 +80,14 @@ function CreateOrder() {
           </div>
         </div>
 
-        <div className="mb-12 flex items-center gap-5 self-center">
+        <div className="mb-5 flex items-center gap-5 self-center">
           <input
             className="h-6 w-6 accent-secondary focus:outline-none focus:ring focus:ring-secondary focus:ring-offset-2"
             type="checkbox"
             name="priority"
             id="priority"
             value={priority}
-            onChange={(e)=>setPriority(e.target.checked)}
+            onChange={(e) => setPriority(e.target.checked)}
           />
           <label htmlFor="priority" className="font-vazir">
             می خواهی سفارشت در اولویت قرار بگیرد؟
@@ -95,9 +96,11 @@ function CreateOrder() {
 
         <div className="text-center">
           <input type="hidden" name="cart" value={JSON.stringify(cart)} />
-          <ButtonSm disabled={isSubmitting} type="primary">
-            {isSubmitting ? "در حال ثبت" : `ثبت سفارش ( ${formatCurrency(totalPrice)} )`}
-          </ButtonSm>
+          <ButtonLg disabled={isSubmitting} type="primary">
+            {isSubmitting
+              ? "در حال ثبت"
+              : `ثبت سفارش ( ${formatCurrency(totalPrice)} )`}
+          </ButtonLg>
         </div>
       </Form>
     </div>

@@ -7,7 +7,7 @@ export default function Menu() {
   const menu = useLoaderData();
 
   return (
-    <ul className='flex flex-col mx-72 my-5'>
+    <ul className='flex flex-col px-2'>
       {menu.map((pizza)=><MenuItem pizza={pizza} key={pizza.id}/>)}
     </ul>
   )

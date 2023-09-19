@@ -24,29 +24,37 @@ export default function MenuItem({ pizza }) {
   }
 
   return (
-    <li className="flex gap-x-5 border-b-2 py-2">
-      <img src={imageUrl} alt={name} className="h-28 w-28"></img>
-      <div className="flex flex-col">
-        <p className="text-lg font-semibold tracking-wide">{name}</p>
-        <p className="font-mono text-dark">{ingredients.join(", ")}</p>
-        <div className="mt-auto">
+    <li className="flex gap-x-3 border-b-2 py-2">
+      <img
+        src={imageUrl}
+        alt={name}
+        className={`h-24 ${soldOut ? "opacity-70 grayscale" : ""}`}
+      ></img>
+      <div className="flex grow flex-col pt-0.5">
+        <p className="text-lg font-medium tracking-wide">{name}</p>
+        <p className="capitalize italic text-dark">{ingredients.join(", ")}</p>
+        <div className="mt-auto flex items-center justify-between">
           {!soldOut ? (
-            <p className="font-mono">{formatCurrency(unitPrice)}</p>
+            <p className="font-semibold text-dark">
+              {formatCurrency(unitPrice)}
+            </p>
           ) : (
             <p className="font-semibold text-dark">SOLD OUT</p>
           )}
+
+          {isInCart && (
+            <div className="flex flex-row-reverse items-center gap-3">
+              <DeleteButton pizzaId={id}>حذف</DeleteButton>
+              <UpdateItemQuantity
+                pizzaId={id}
+                currentQuantity={currentQuantity}
+              />
+            </div>
+          )}
+          {!soldOut && !isInCart && (
+            <ButtonSm onClick={handleAddToCart}>اضافه به سبد</ButtonSm>
+          )}
         </div>
-      </div>
-      <div className="mr-auto mt-auto">
-        {isInCart && (
-          <div className="flex flex-row-reverse items-center gap-3">
-            <DeleteButton pizzaId={id}>حذف</DeleteButton>
-            <UpdateItemQuantity pizzaId={id} currentQuantity={currentQuantity}/>
-          </div>
-        )}
-        {!soldOut && !isInCart && (
-          <ButtonSm onClick={handleAddToCart}>اضافه به سبد</ButtonSm>
-        )}
       </div>
     </li>
   );
