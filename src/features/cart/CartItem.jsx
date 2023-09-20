@@ -10,7 +10,7 @@ function CartItem({ item }) {
 
   return (
     <li className="flex items-center justify-between py-3">
-      <p className="font-semibold">
+      <p className="font-semibold ml-1">
         {quantity}&times;{" "}
         <span className="font-vazir font-semibold">پیتزای</span> {name}
       </p>

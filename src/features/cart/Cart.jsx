@@ -5,6 +5,7 @@ import CartItem from "./CartItem";
 import { useDispatch, useSelector } from "react-redux";
 import SecondButton from "../../ui/SecondButton";
 import { clearCart, getCard } from "./cartSlice";
+import { Link } from "react-router-dom";
 
 export default function Cart() {
   const cart = useSelector(getCard);
@@ -13,11 +14,11 @@ export default function Cart() {
   return (
     <div className="mx-4">
       <div className="my-5 flex items-center justify-between">
-        <h2 className="font-vazir text-lg font-semibold">
+        <h2 className="font-vazir text-lg font-semibold border-b-2 border-dark border-dashed">
           سبد خرید {username}
         </h2>
         <div>
-          <ButtonSm to="/menu">&larr; منو</ButtonSm>
+          <Link className="font-vazir text-lg bg-dark text-light rounded-full px-2 py-0.5" to="/menu">&larr; منو</Link>
         </div>
       </div>
 
