@@ -48,7 +48,7 @@ export default function Header() {
           className="relative rounded-full p-2 ring-2 ring-light transition-all duration-200 hover:bg-dark focus:bg-dark focus:ring-2 sm:p-3"
         >
           <FaCartShopping className="text-light lg:text-lg" />
-          <div className="absolute -right-3 -top-3 inline-flex h-6 w-6 items-center justify-center rounded-full border-2 border-white bg-dark text-xs font-bold text-white dark:border-gray-900 lg:h-7 lg:w-7 lg:text-sm">
+          <div className="absolute -right-3 -top-3 inline-flex h-6 w-6 items-center justify-center rounded-full border-2 border-white bg-light text-xs font-bold text-dark dark:border-gray-900 lg:h-7 lg:w-7 lg:text-sm">
             {totalCartQuantity}
           </div>
         </Link>
