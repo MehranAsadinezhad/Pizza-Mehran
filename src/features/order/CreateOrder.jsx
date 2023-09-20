@@ -31,15 +31,14 @@ function CreateOrder() {
   if (!cart.length) return <EmptyCart />;
 
   return (
-    <div className="mx-4 my-5 flex flex-col">
-      {/* <Form method="POST" action="/order/new"> */}
+    <div className="mx-4 my-5 lg:my-8 flex flex-col">
       <Form method="POST" className="flex flex-col">
-        <div className="mb-5 grow flex items-center gap-x-4">
-          <label className="font-vazir grow font-semibold">
+        <div className="mb-5 sm:mb-6 lg:mb-8 grow flex items-center gap-x-4">
+          <label className="font-vazir lg:text-lg grow font-semibold">
             نام و نام خانوادگی
           </label>
           <input
-            className="w-full rounded-full p-2 px-4 font-vazir outline-none ring-1 ring-gray-200 transition-all duration-200 focus:ring-2 focus:ring-primary "
+            className="w-full lg:text-lg rounded-full p-2 px-4 font-vazir outline-none ring-1 ring-gray-200 transition-all duration-200 focus:ring-2 focus:ring-primary "
             type="text"
             name="customer"
             defaultValue={username}
@@ -47,13 +46,13 @@ function CreateOrder() {
           />
         </div>
 
-        <div className="mb-5 flex items-center gap-x-4">
-          <label className="font-vazir font-semibold ">
+        <div className="mb-5 sm:mb-6 lg:mb-8 flex items-center gap-x-4">
+          <label className="font-vazir lg:text-lg font-semibold ">
             شماره تماس
           </label>
           <div className="grow">
             <input
-              className="w-full rounded-full p-2 px-4 font-vazir outline-none ring-1 ring-gray-200 transition-all duration-200 focus:ring-2 focus:ring-primary "
+              className="w-full lg:text-lg rounded-full p-2 px-4 font-vazir outline-none ring-1 ring-gray-200 transition-all duration-200 focus:ring-2 focus:ring-primary "
               type="tel"
               name="phone"
               required
@@ -66,13 +65,13 @@ function CreateOrder() {
           </div>
         </div>
 
-        <div className="mb-5 flex items-center gap-x-2">
-          <label className="font-vazir font-semibold">
+        <div className="mb-5 sm:mb-6 lg:mb-8 flex items-center lg:gap-x-5 gap-x-2">
+          <label className="font-vazir lg:text-lg font-semibold">
             آدرس
           </label>
           <div className="grow">
             <textarea
-              className=" w-full rounded-lg px-2 font-vazir outline-none ring-1 ring-gray-200 transition-all duration-200 focus:ring-2 focus:ring-primary "
+              className=" w-full lg:text-lg rounded-lg px-2 font-vazir outline-none ring-1 ring-gray-200 transition-all duration-200 focus:ring-2 focus:ring-primary "
               type="text"
               name="address"
               required
@@ -80,7 +79,7 @@ function CreateOrder() {
           </div>
         </div>
 
-        <div className="mb-5 flex items-center gap-5 self-center">
+        <div className="mb-5 flex items-center gap-3 self-center">
           <input
             className="h-6 w-6 accent-secondary focus:outline-none focus:ring focus:ring-secondary focus:ring-offset-2"
             type="checkbox"
@@ -89,12 +88,12 @@ function CreateOrder() {
             value={priority}
             onChange={(e) => setPriority(e.target.checked)}
           />
-          <label htmlFor="priority" className="font-vazir">
-            می خواهی سفارشت در اولویت قرار بگیرد؟
+          <label htmlFor="priority" className="sm:text-lg font-vazir">
+            سفارشت در اولویت قرار بگیرد؟
           </label>
         </div>
 
-        <div className="text-center">
+        <div className="text-center lg:my-3">
           <input type="hidden" name="cart" value={JSON.stringify(cart)} />
           <ButtonLg disabled={isSubmitting} type="primary">
             {isSubmitting

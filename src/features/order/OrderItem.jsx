@@ -5,7 +5,7 @@ function OrderItem({ item, isLoadingIngredients, ingredients }) {
 
   return (
     <li className="py-3">
-      <div className="flex items-center justify-between gap-4 font-semibold">
+      <div className="flex items-center lg:text-lg justify-between gap-4 font-semibold">
         <p>
           <span className="font-vazir font-bold">{quantity}&times; </span>پیتزای{" "}
           {name}

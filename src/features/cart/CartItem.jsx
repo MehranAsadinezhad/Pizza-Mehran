@@ -10,12 +10,12 @@ function CartItem({ item }) {
 
   return (
     <li className="flex items-center justify-between py-3">
-      <p className="font-semibold ml-1">
+      <p className="font-semibold lg:text-lg lg:font-bold ml-1">
         {quantity}&times;{" "}
-        <span className="font-vazir font-semibold">پیتزای</span> {name}
+        <span className="font-vazir lg:text-lg font-semibold">پیتزای</span> {name}
       </p>
-      <div className="flex items-center gap-x-4 justify-between">
-        <p className="text-sm font-bold">{formatCurrency(totalPrice)}</p>
+      <div className="flex items-center gap-x-4 lg:gap-x-8 justify-between">
+        <p className="text-sm font-bold lg:text-base">{formatCurrency(totalPrice)}</p>
         <UpdateItemQuantity pizzaId={pizzaId} currentQuantity={currentQuantity}/>
         <DeleteButton pizzaId={pizzaId}>حذف</DeleteButton>
       </div>

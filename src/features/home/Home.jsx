@@ -20,11 +20,11 @@ export default function Home() {
   }
 
   return (
-    <div className="my-14 flex flex-col items-center justify-center">
-      <h1 className="font-vazir text-2xl tracking-wider text-primary">
+    <div className="my-14 flex flex-col items-center justify-center lg:my-16">
+      <h1 className="font-vazir text-2xl tracking-wider font-semibold text-primary md:text-4xl sm:text-3xl lg:text-5xl">
         یکبار امتحان از منوی ما
       </h1>
-      <div className="my-5 flex gap-x-1 font-vazir text-2xl tracking-wider text-primary">
+      <div className="my-5 flex gap-x-1 font-semibold font-vazir text-2xl tracking-wider text-primary md:my-8 md:text-4xl sm:my-6 sm:text-3xl lg:my-10 lg:gap-x-3 lg:text-5xl">
         <h1>و یک عمر تکرار امتحان</h1>
         <span className="text-dark">
           <FaRegHeart />
@@ -34,7 +34,7 @@ export default function Home() {
         {!isUsername && (
           <input
             type="text"
-            className="mb-5 rounded-full py-1 px-2  font-vazir outline-none ring-1 ring-gray-200 transition-all duration-200 focus:ring-2 focus:ring-primary "
+            className="mb-5 rounded-full p-2 font-vazir outline-none  ring-1 ring-gray-200 transition-all duration-200 focus:ring-2 focus:ring-primary  sm:mb-6 sm:px-12 sm:py-2 sm:text-center sm:text-lg lg:my-8 lg:py-3 lg:text-xl "
             placeholder="نام و نام خانوادگی"
             onChange={(e) => setUsername(e.target.value)}
           ></input>
@@ -42,7 +42,11 @@ export default function Home() {
         {username && <ButtonLg>ورود به اپ</ButtonLg>}
         {isUsername && <ButtonLg to="/menu">برگشت به منو</ButtonLg>}
       </form>
-      <img src={pizzaImg} className="w-56"></img>
+      <img
+        src={pizzaImg}
+        alt="pizza"
+        className="mt-5 w-56 md:w-64 lg:mt-8 lg:w-72"
+      ></img>
     </div>
   );
 }

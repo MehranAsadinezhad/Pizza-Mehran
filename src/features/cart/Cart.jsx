@@ -13,12 +13,17 @@ export default function Cart() {
   const dispatch = useDispatch();
   return (
     <div className="mx-4">
-      <div className="my-5 flex items-center justify-between">
-        <h2 className="font-vazir text-lg font-semibold border-b-2 border-dark border-dashed">
+      <div className="my-5 lg:my-8 flex items-center justify-between">
+        <h2 className="border-b-2 lg:text-xl border-dashed border-dark font-vazir text-lg font-semibold">
           سبد خرید {username}
         </h2>
         <div>
-          <Link className="font-vazir text-lg bg-dark text-light rounded-full px-2 py-0.5" to="/menu">&larr; منو</Link>
+          <Link
+            className="rounded-full lg:px-4 lg:py-1 bg-dark px-2 py-0.5 sm:px-3 font-vazir text-lg text-light"
+            to="/menu"
+          >
+            &larr; منو
+          </Link>
         </div>
       </div>
 
@@ -28,7 +33,7 @@ export default function Cart() {
         ))}
       </ul>
 
-      <div className="my-5 flex items-center justify-center gap-x-3">
+      <div className="my-5 lg:my-8 lg:gap-x-8 flex items-center justify-center gap-x-3">
         <ButtonLg to="/order/new">سفارش</ButtonLg>
         <SecondButton onClick={() => dispatch(clearCart())}>
           حذف سبد خرید

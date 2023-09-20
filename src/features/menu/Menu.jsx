@@ -8,7 +8,7 @@ export default function Menu() {
 
   return (
     <div className="relative">
-      <ul className="flex flex-col px-2">
+      <ul className="flex flex-col px-3">
         {menu.map((pizza) => (
           <MenuItem pizza={pizza} key={pizza.id} />
         ))}

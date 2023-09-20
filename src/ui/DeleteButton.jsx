@@ -7,7 +7,7 @@ export default function DeleteButton({children, pizzaId}) {
     return (
         <button
             onClick={() => dispatch(deleteItem(pizzaId))}
-            className="rounded-full bg-secondary px-3 py-1 font-vazir text-white transition-all duration-200  hover:bg-lightRed"
+            className="rounded-full lg:px-4 lg:text-lg bg-secondary px-3 py-1 font-vazir text-white transition-all duration-200  hover:bg-lightRed"
         >
             {children}
         </button>

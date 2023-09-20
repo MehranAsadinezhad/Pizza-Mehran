@@ -45,7 +45,7 @@ export default function MenuItem({ pizza }) {
           )}
 
           {isInCart && (
-            <div className="flex flex-row-reverse items-center gap-3">
+            <div className="flex flex-row-reverse items-center gap-3 md:gap-8">
               <DeleteButton pizzaId={id}>حذف</DeleteButton>
               <UpdateItemQuantity
                 pizzaId={id}

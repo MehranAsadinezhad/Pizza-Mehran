@@ -19,13 +19,13 @@ export default {
         shabnamBold: "shabnamBold",
       },
       screens: {
-        sm: "370px",
+        sm: "520px",
         // => @media (min-width: 576px) { ... }
 
-        md: "498px",
+        md: "640px",
         // => @media (min-width: 960px) { ... }
 
-        lg: "742px",
+        lg: "834px",
         // => @media (min-width: 1440px) { ... }
 
         xl: "1022px",
