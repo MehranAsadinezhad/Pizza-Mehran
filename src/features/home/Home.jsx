@@ -4,6 +4,7 @@ import ButtonLg from "../../ui/ButtonLg";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { updateName } from "../user/userSlice";
+import pizzaImg from "../../assets/pizza.png";
 
 export default function Home() {
   const [username, setUsername] = useState("");
@@ -38,9 +39,10 @@ export default function Home() {
             onChange={(e) => setUsername(e.target.value)}
           ></input>
         )}
-        {username && <ButtonLg>ورود </ButtonLg>}
+        {username && <ButtonLg>ورود به اپ</ButtonLg>}
         {isUsername && <ButtonLg to="/menu">برگشت به منو</ButtonLg>}
       </form>
+      <img src={pizzaImg} className="w-56"></img>
     </div>
   );
 }

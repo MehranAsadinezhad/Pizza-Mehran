@@ -34,12 +34,12 @@ function CreateOrder() {
     <div className="mx-4 my-5 flex flex-col">
       {/* <Form method="POST" action="/order/new"> */}
       <Form method="POST" className="flex flex-col">
-        <div className="mb-5 grow flex items-center gap-x-2">
-          <label className="font-vazir grow font-semibold sm:basis-40">
+        <div className="mb-5 grow flex items-center gap-x-4">
+          <label className="font-vazir grow font-semibold">
             نام و نام خانوادگی
           </label>
           <input
-            className="w-full rounded-full p-2 font-vazir outline-none ring-1 ring-gray-200 transition-all duration-200 focus:ring-2 focus:ring-primary "
+            className="w-full rounded-full p-2 px-4 font-vazir outline-none ring-1 ring-gray-200 transition-all duration-200 focus:ring-2 focus:ring-primary "
             type="text"
             name="customer"
             defaultValue={username}
@@ -47,8 +47,8 @@ function CreateOrder() {
           />
         </div>
 
-        <div className="mb-5 flex items-center gap-x-2">
-          <label className="font-vazir font-semibold sm:basis-40">
+        <div className="mb-5 flex items-center gap-x-4">
+          <label className="font-vazir font-semibold ">
             شماره تماس
           </label>
           <div className="grow">
