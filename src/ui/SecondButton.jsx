@@ -6,7 +6,7 @@ export default function SecondButton({ children, onClick, to }) {
     return (
       <Link
         to={to}
-        className="rounded-full  bg-secondary px-3 py-0.5 font-vazir text-white transition-all duration-200  hover:bg-lightRed focus:ring-2 focus:ring-lightRed focus:ring-offset-2"
+        className="rounded-full  bg-secondary px-3 py-1.5 font-vazir text-white transition-all duration-200  hover:bg-lightRed focus:ring-2 focus:ring-lightRed focus:ring-offset-2"
       >
         {children}
       </Link>
@@ -15,7 +15,7 @@ export default function SecondButton({ children, onClick, to }) {
   return (
     <button
       onClick={onClick}
-      className="rounded-full  bg-light px-3 py-0.5 font-vazir  text-secondary ring-2 ring-secondary transition-all duration-200  hover:bg-secondary hover:text-light  focus:ring-offset-2"
+      className="rounded-full  bg-light px-3 py-1.5 font-vazir  text-secondary ring-2 ring-secondary transition-all duration-200  hover:bg-secondary hover:text-light  focus:ring-offset-2"
     >
       {children}
     </button>

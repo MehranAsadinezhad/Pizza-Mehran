@@ -8,6 +8,7 @@ import {
   formatCurrency,
   formatDate,
 } from "../../utils/helpers";
+import Button from "../../ui/ButtonSm";
 
 function Order() {
   const order = useLoaderData();
@@ -29,7 +30,7 @@ function Order() {
       <div className="flex flex-wrap items-center justify-between">
         <h2 className="font-vazir text-lg font-semibold">سفارش #{id}</h2>
         {priority && (
-          <span className="rounded-full bg-green-500 px-3 py-1 font-vazir text-sm font-semibold uppercase tracking-wide text-light">
+          <span className="rounded-full bg-primary px-3 py-1 font-vazir text-sm font-semibold uppercase tracking-wide text-light">
             در اولویت
           </span>
         )}
@@ -64,6 +65,9 @@ function Order() {
         <p className="font-vazir font-bold">
           هزینه ی کل : {formatCurrency(orderPrice + priorityPrice)}
         </p>
+      </div>
+      <div className="text-center">
+        <Button to="/">صفحه ی اصلی</Button>
       </div>
     </div>
   );

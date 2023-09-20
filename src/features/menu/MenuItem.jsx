@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { addItem, getCurrentQuantity } from "../cart/cartSlice";
 import DeleteButton from "../../ui/DeleteButton";
 import UpdateItemQuantity from "../cart/UpdateItemQuantity";
+import toast from "react-hot-toast";
+
 
 export default function MenuItem({ pizza }) {
   const { id, name, unitPrice, ingredients, soldOut, imageUrl } = pizza;
@@ -52,7 +54,10 @@ export default function MenuItem({ pizza }) {
             </div>
           )}
           {!soldOut && !isInCart && (
-            <ButtonSm onClick={handleAddToCart}>اضافه به سبد</ButtonSm>
+            <ButtonSm onClick={()=>{
+              handleAddToCart();
+              toast.success('به سبد خرید اضافه شد')
+            }}>اضافه به سبد</ButtonSm>
           )}
         </div>
       </div>

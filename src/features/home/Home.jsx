@@ -23,7 +23,7 @@ export default function Home() {
       <h1 className="font-vazir text-2xl tracking-wider text-primary">
         یکبار امتحان از منوی ما
       </h1>
-      <div className="my-5 flex gap-x-1 font-vazir text-2xl tracking-wider text-dark">
+      <div className="my-5 flex gap-x-1 font-vazir text-2xl tracking-wider text-primary">
         <h1>و یک عمر تکرار امتحان</h1>
         <span className="text-dark">
           <FaRegHeart />
@@ -38,7 +38,7 @@ export default function Home() {
             onChange={(e) => setUsername(e.target.value)}
           ></input>
         )}
-        {username && <ButtonLg>سفارش</ButtonLg>}
+        {username && <ButtonLg>ورود </ButtonLg>}
         {isUsername && <ButtonLg to="/menu">برگشت به منو</ButtonLg>}
       </form>
     </div>

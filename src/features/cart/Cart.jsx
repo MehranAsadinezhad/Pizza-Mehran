@@ -17,7 +17,7 @@ export default function Cart() {
           سبد خرید {username}
         </h2>
         <div>
-          <ButtonLg to="/menu">&larr; منو</ButtonLg>
+          <ButtonSm to="/menu">&larr; منو</ButtonSm>
         </div>
       </div>
 
@@ -27,7 +27,7 @@ export default function Cart() {
         ))}
       </ul>
 
-      <div className="my-5 flex items-center gap-x-3">
+      <div className="my-5 flex items-center justify-center gap-x-3">
         <ButtonLg to="/order/new">سفارش</ButtonLg>
         <SecondButton onClick={() => dispatch(clearCart())}>
           حذف سبد خرید
